@@ -1,0 +1,32 @@
+<!-- STYCKY PORTLET CONTROL | See structure => /metronic/sticky-form-actions -->
+  <!-- PORTLET LOADING | Binded to TABLE Datasource -->
+  <!-- See prop => '../../_core/models/data-sources/_base.datasource.ts' (loading$) -->
+
+  <!-- start::Header (attributtes: mPortletHeadTitle|mPortletHeadTools) -->
+    <div class="row">
+      <div class="container">
+        <div class="col-12">
+          <table id="example" class="table table-striped table-bordered" style="width:100%">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Dept</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let client of clients ">
+                <td>{{client.id}}</td>
+                <td>{{client.name}}</td>
+                <td>{{client.phone_number}}</td>
+                <td>{{client.email}}</td>
+                <td>{{client.dept}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  <!-- end::Body -->
+
