@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 
-
 //  App imports
-import { Client } from '../client';
+import { Brand } from '../brand';
 
 import { Router, ActivatedRoute } from '@angular/router';
-import { ClientService } from '../_services/client.service';
+import { BrandService } from '../_services/brand.service';
 
 @Component({
-  selector: 'app-client-add',
-  templateUrl: './client-add.component.html',
-  styleUrls: ['./client-add.component.scss']
+  selector: 'app-brand-add',
+  templateUrl: './brand-add.component.html',
+  styleUrls: ['./brand-add.component.scss']
 })
-export class ClientAddComponent implements OnInit {
-
-  client: Client = new Client();
+export class BrandAddComponent implements OnInit {
+  brand: Brand = new Brand();
   isLoading: Boolean = false;
   returnUrl: string;
   error: any;
 
   constructor(
-    private clientService: ClientService,
+    private brandService: BrandService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -28,26 +26,25 @@ export class ClientAddComponent implements OnInit {
 
   ngOnInit() {
     //  Set the return url
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
 
-  onSubmit(clientAddForm): void {
+  onSubmit(brandAddForm): void {
     //console.log(this.client);
-    this.clientService.addClient(this.client)
+    this.brandService.addBrand(this.brand)
       .subscribe((response) => {
         this.isLoading = false;
-        this.client = response['data'];
+        this.brand = response['data'];
         // get return url from route parameters or default to '/'
         //this.router.navigate([this.returnUrl]);
         //alert('Client has been add')
       },
-      (error) => {
-        this.error = error.error;
-      }
-    );
+        (error) => {
+          this.error = error.error;
+        }
+      );
     // Clear form fields
-    clientAddForm.reset();
+    brandAddForm.reset();
   }
-
 }

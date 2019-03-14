@@ -14,15 +14,18 @@
                 <th>Phone Number</th>
                 <th>Email</th>
                 <th>Dept</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let client of clients ">
-                <td>{{client.id}}</td>
+                <td> <a class="nav-link" [routerLink]="['/clients',(client.id)]"
+                routerLinkActive="active">{{client.id}}</a></td>
                 <td>{{client.name}}</td>
                 <td>{{client.phone_number}}</td>
                 <td>{{client.email}}</td>
                 <td>{{client.dept}}</td>
+                <td><button (click)="deleteClient(client.id)">X</button></td>
             </tr>
           </table>
         </div>

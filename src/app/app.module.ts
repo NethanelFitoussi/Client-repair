@@ -7,7 +7,11 @@ import { AppComponent } from './app.component';
 //Application module
 import { HomeModule } from './pages/home/home.module';
 import { ClientsModule } from './pages/clients/clients.module';
+import { ModelsModule } from './pages/models/models.module';
+import { BrandsModule } from './pages/brands/brands.module';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 import { NavComponent } from './layout/nav/nav.component';
 
 @NgModule({
@@ -20,6 +24,9 @@ import { NavComponent } from './layout/nav/nav.component';
     AppRoutingModule,
     HomeModule,
     ClientsModule,
+    ModelsModule,
+    BrandsModule,
+    FormsModule,
     NgbModule.forRoot()
   ],
   providers: [

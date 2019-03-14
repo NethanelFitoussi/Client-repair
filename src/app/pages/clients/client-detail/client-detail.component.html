@@ -1,3 +1,35 @@
-<p>
-  client-detail works!
-</p>
+<!-- start::Header (attributtes: mPortletHeadTitle|mPortletHeadTools) -->
+<main role="main">
+  <div class="container">
+    <form class="form-signin" (ngSubmit)="onSubmit(clientUpdateForm)" #clientUpdateForm="ngForm">
+      <div class="text-center mb-4">
+        <h1 class="h3 mt-3 mb-3 font-weight-normal">Welcome</h1>
+        <p></p>
+        <hr>
+      </div>{{client.name}}
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" [(ngModel)]="client.name" name="name" #client.name="ngModel" required class="form-control" id="name"
+        placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label for="phone_number">Email address</label>
+        <input type="text" [(ngModel)]="client.phone_number" name="phone_number" #email="ngModel" required class="form-control"
+          id="phone_number" placeholder="Enter phone_number">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" [(ngModel)]="client.email" name="email" #email="ngModel" required class="form-control" id="email"
+          aria-describedby="emailHelp" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label for="dept">Dept</label>
+        <input type="text" [(ngModel)]="client.dept" name="dept" #dept="ngModel" class="form-control" id="dept"
+          placeholder="Dept">
+      </div>
+      <button [disabled]="!clientUpdateForm.valid" class="btn btn-lg btn-primary btn-block mt-5" type="submit">VALIDER</button>
+    </form>
+  </div>
+</main>
+
+<!-- end::Body -->

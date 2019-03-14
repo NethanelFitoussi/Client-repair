@@ -13,10 +13,10 @@ const routes: Routes = [
         path: '', component: ClientListComponent
       },
       {
-        path: ':id', component: ClientDetailComponent
+        path: 'create', component: ClientAddComponent
       },
       {
-        path: 'create', component: ClientAddComponent
+        path: ':id', component: ClientDetailComponent
       }
     ]
   }

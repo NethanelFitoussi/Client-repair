@@ -1,0 +1,54 @@
+<!-- Default form row -->
+<div class="row mt20">
+  <div class="container">
+    <!-- Extended default form grid -->
+    <form #modelAddForm="ngForm" (ngSubmit)="onSubmit(modelAddForm)">
+      <!-- Grid row -->
+      <div class="form-row" >
+        <!-- Default input -->
+        <div class="form-group col-md-6">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="model.name" name="name" #name="ngModel" required class="form-control" id="name"
+            placeholder="Enter your name">
+        </div>
+        <!-- Default input -->
+        <div class="form-group col-md-6">
+          <label for="picture">Picture</label>
+          <input type="text" class="form-control"  [(ngModel)]="model.picture" name="picture" #name="ngModel" id="picture" placeholder="Picture">
+        </div>
+      </div>
+      <!-- Grid row -->
+
+      <!-- Grid row -->
+      <div class="form-row">
+        <!-- Default input -->
+        <div class="form-group col-md-6">
+          <label for="reference">Reference</label>
+          <input type="text" class="form-control" [(ngModel)]="model.reference" name="reference" #reference="ngModel" id="reference" placeholder="Reference">
+        </div>
+        <!-- Default input -->
+        <div class="form-group col-md-6">
+          <label for="color">Color</label>
+          <input type="text" class="form-control" [(ngModel)]="model.color" name="color" #color="ngModel" id="color" placeholder="Color">
+        </div>
+      </div>
+      <!-- Grid row -->
+
+      <!-- Default input -->
+      <!-- <div class="form-group">
+        <label for="inputAddress">Description</label>
+        <input mdbInput type="text" class="form-control" [(ngModel)]="model.description" name="description" #description="ngModel" id="description" placeholder="1234 Main St">
+      </div> -->
+
+      <!--Material textarea-->
+      <div class="md-form md-outline">
+        <label for="description">Description</label>
+        <textarea type="text" id="description" class="form-control md-textarea" rows="3" [(ngModel)]="model.description" name="description" #description="ngModel"></textarea>
+      </div>
+
+      <button [disabled]="!modelAddForm.valid" class="btn btn-lg btn-primary btn-block mt-5" type="submit">VALIDER</button>
+    </form>
+    <!-- Extended default form grid -->
+  </div>
+</div>
+<!-- Default form row -->

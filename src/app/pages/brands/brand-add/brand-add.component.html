@@ -1,0 +1,23 @@
+<!-- Default form row -->
+<div class="row mt20">
+  <div class="container">
+    <!-- Extended default form grid -->
+    <form #brandAddForm="ngForm" (ngSubmit)="onSubmit(brandAddForm)">
+      <!-- Grid row -->
+      <div class="form-row">
+        <!-- Default input -->
+        <div class="form-group col-md-6">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="brand.name" name="name" #name="ngModel" required class="form-control" id="name"
+            placeholder="Enter your name">
+        </div>
+      </div>
+      <!-- Grid row -->
+
+
+      <button [disabled]="!brandAddForm.valid" class="btn btn-lg btn-primary btn-block mt-5" type="submit">VALIDER</button>
+    </form>
+    <!-- Extended default form grid -->
+  </div>
+</div>
+<!-- Default form row -->
