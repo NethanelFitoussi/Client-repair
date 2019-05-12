@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 //Application module
+import { AuthModule } from './pages/brands/brands.module';
 import { HomeModule } from './pages/home/home.module';
 import { ClientsModule } from './pages/clients/clients.module';
 import { ModelsModule } from './pages/models/models.module';
@@ -22,6 +23,7 @@ import { NavComponent } from './layout/nav/nav.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AuthModule,
     HomeModule,
     ClientsModule,
     ModelsModule,
